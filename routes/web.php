@@ -62,6 +62,11 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard.user.chat');
     })->name('user.chat');
 
+    // RUTE MENU SELLER
+    Route::get('/dashboard/seller/finance', function () {
+        return view('dashboard.seller.finance');
+    })->name('seller.finance');
+
     // 3. RUTE PRODUK (VERSI ALAMAT LENGKAP)
     Route::get('/products/create', [\App\Http\Controllers\ProductController::class, 'create'])->name('products.create');
     Route::post('/products', [\App\Http\Controllers\ProductController::class, 'store'])->name('products.store');
