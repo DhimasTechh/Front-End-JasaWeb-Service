@@ -77,6 +77,16 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard.admin.reports');
     })->name('admin.reports');
 
+    // RUTE MENU SUPER ADMIN
+    Route::get('/dashboard/superadmin/admins', function () {
+        return view('dashboard.superadmin.admins');
+    })->name('superadmin.admins');
+
+    // RUTE MENU SUPER ADMIN
+    Route::get('/dashboard/superadmin/settings', function () {
+        return view('dashboard.superadmin.settings');
+    })->name('superadmin.settings');
+
     // 3. RUTE PRODUK (VERSI ALAMAT LENGKAP)
     Route::get('/products/create', [\App\Http\Controllers\ProductController::class, 'create'])->name('products.create');
     Route::post('/products', [\App\Http\Controllers\ProductController::class, 'store'])->name('products.store');
