@@ -67,6 +67,16 @@ Route::middleware(['auth'])->group(function () {
         return view('dashboard.seller.finance');
     })->name('seller.finance');
 
+    // RUTE MENU ADMIN
+    Route::get('/dashboard/admin/verification', function () {
+        return view('dashboard.admin.verification');
+    })->name('admin.verification');
+
+    // RUTE MENU ADMIN
+    Route::get('/dashboard/admin/reports', function () {
+        return view('dashboard.admin.reports');
+    })->name('admin.reports');
+
     // 3. RUTE PRODUK (VERSI ALAMAT LENGKAP)
     Route::get('/products/create', [\App\Http\Controllers\ProductController::class, 'create'])->name('products.create');
     Route::post('/products', [\App\Http\Controllers\ProductController::class, 'store'])->name('products.store');
